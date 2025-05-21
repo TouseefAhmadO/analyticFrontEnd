@@ -1,0 +1,253 @@
+.mainContainer {
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../../assets/bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .container {
+    border-radius: 10px;
+    width: 70%;
+    overflow: hidden;
+    display: flex;
+
+    @media (max-width: 800px) {
+      width: 90%;
+    }
+
+    @media (max-width: 680px) {
+      flex-direction: column-reverse;
+    }
+
+    .analyticsContainer {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url("../../assets/img.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      padding: 50px;
+
+      @media (max-width: 680px) {
+        width: auto;
+      }
+
+      h1 {
+        text-transform: uppercase;
+        padding-top: 30px;
+        font-size: 24px;
+      }
+      h2 {
+        border-radius: 50%;
+        height: 80px;
+        width: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 10;
+        margin-bottom: 0;
+      }
+
+      h3 {
+        font-size: 20px;
+        margin: 10px;
+      }
+
+      p {
+        text-align: center;
+        font-size: 12px;
+        padding: 10px 30px;
+      }
+    }
+    .formContainer {
+      width: 50%;
+      padding: 50px;
+
+      @media (max-width: 680px) {
+        width: auto;
+        border-right: 0;
+        border-top: 1px solid #5acedd;
+      }
+
+      h1 {
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .formGroup {
+        margin-bottom: 16px;
+        text-align: left;
+
+        label {
+          display: block;
+          margin-bottom: 8px;
+          font-size: 14px;
+          font-weight: 500;
+        }
+
+        .loginInput {
+          width: 100%;
+          background-color: #fff;
+          border-radius: 5px;
+
+          input {
+            border-width: 2px;
+            &:focus,
+            &:hover {
+              outline: none;
+              border-color: #5acedd;
+              border-width: 2px;
+            }
+          }
+        }
+      }
+      .errorStyle {
+        font-size: 15px;
+        color: #ff0404;
+        margin-top: -10px;
+      }
+      .btnStyle {
+        width: 100%;
+        border: none;
+        color: white;
+        font-size: 20px;
+        margin-bottom: 10px;
+        margin-top: 20px;
+        padding: 20px;
+        font-weight: 600;
+      }
+
+      .noAccountStyle {
+        text-align: center;
+        font-size: 13px;
+
+        span {
+          font-weight: 600;
+          cursor: pointer;
+          padding-left: 4px;
+        }
+      }
+    }
+  }
+}
+
+.dark {
+  .container {
+    background: linear-gradient(
+      90deg,
+      rgb(158, 158, 158) 0%,
+      rgb(0, 0, 0, 1) 90%
+    );
+    box-shadow: rgba(255, 255, 255) 0px 5px 15px;
+    .analyticsContainer {
+      h1 {
+        color: #fff;
+      }
+      h2 {
+        color: #fff;
+        border: 1px solid #5acedd;
+      }
+
+      h3 {
+        color: #fff;
+      }
+      p {
+        color: rgb(172, 171, 171);
+      }
+    }
+
+    .formContainer {
+      border-right: 1px solid #5acedd;
+      background: linear-gradient(90deg, rgb(0, 0, 1) 0%, rgb(54, 54, 54) 60%);
+      h1 {
+        color: #5acedd;
+      }
+      .formGroup {
+        label {
+          color: #5acedd;
+        }
+      }
+
+      .btnStyle {
+        background-color: #5acedd;
+        &:hover {
+          background-color: #5acedd;
+          color: white;
+        }
+      }
+
+      .noAccountStyle {
+        span {
+          color: #5acedd;
+        }
+      }
+    }
+  }
+}
+
+.light {
+  .container {
+    box-shadow: rgba(0, 0, 0) 0px 5px 15px;
+    background: linear-gradient(
+      90deg,
+      rgba(230, 254, 255, 1) 33%,
+      rgba(118, 224, 245, 1) 100%
+    );
+
+    .analyticsContainer {
+      h1 {
+        color: #1a454b;
+      }
+      h2 {
+        color: #1a454b;
+        border: 1px solid #1a454b;
+      }
+
+      h3 {
+        color: #1a454b;
+      }
+      p {
+        color: rgb(34, 34, 34);
+      }
+    }
+
+    .formContainer {
+      border-right: 2px solid #1a454b;
+      background: linear-gradient(
+        90deg,
+        rgba(230, 254, 255, 1) 33%,
+        rgba(118, 224, 245, 1) 100%
+      );
+      h1 {
+        color: #27818d;
+      }
+
+      .formGroup {
+        label {
+          color: #27818d;
+        }
+      }
+
+      .btnStyle {
+        background-color: #27818d;
+        &:hover {
+          background-color: #27818d;
+          color: white;
+        }
+      }
+
+      .noAccountStyle {
+        span {
+          color: #27818d;
+        }
+      }
+    }
+  }
+}

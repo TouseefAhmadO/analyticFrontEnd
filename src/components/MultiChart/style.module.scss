@@ -1,0 +1,93 @@
+.mainContainer {
+  .contentHeadContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    h1 {
+      padding: 5px 20px;
+      border-radius: 50px;
+      font-size: 28px;
+      margin: 0 0 6px 0;
+    }
+
+    :global .ant-select {
+      height: auto;
+      margin: 0 0 6px 0;
+      width: 120px;
+      .ant-select-selector {
+        border: none;
+        color: #fff;
+        border-radius: 10px;
+        padding: 5px 20px;
+        .ant-select-selection-wrap {
+          .ant-select-selection-item {
+            color: #fff;
+            font-weight: 600;
+          }
+        }
+      }
+      .ant-select-arrow {
+        color: #fff;
+      }
+    }
+
+    .iconStyle {
+      color: #000;
+      height: 48px;
+      width: 48px;
+      cursor: pointer;
+    }
+  }
+  .chartStyle {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    margin-bottom: 20px;
+  }
+}
+
+.dark {
+  .contentHeadContainer {
+    h1 {
+      background-color: #000;
+    }
+
+    :global .ant-select {
+      .ant-select-selector {
+        background-color: #000;
+      }
+    }
+    .iconStyle {
+      color: #000;
+    }
+  }
+  .chartStyle {
+    background-color: #000;
+  }
+}
+
+.light {
+  .contentHeadContainer {
+    h1 {
+      background-color: #27818d;
+      color: #fff;
+    }
+
+    :global .ant-select {
+      .ant-select-selector {
+        background-color: #27818d;
+      }
+    }
+
+    .iconStyle {
+      color: #27818d;
+    }
+  }
+  .chartStyle {
+    background-color: #27818d;
+  }
+}

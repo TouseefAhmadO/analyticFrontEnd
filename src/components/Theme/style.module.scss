@@ -1,0 +1,28 @@
+.mainContainer {
+  display: flex;
+  gap: 10px;
+
+  .btnStyle {
+    color: #ffff;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+  }
+}
+
+.dark {
+  .btnStyle {
+    background-color: #5acedd;
+  }
+}
+.light {
+  .btnStyle {
+    background-color: #27818d;
+  }
+}

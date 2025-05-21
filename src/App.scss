@@ -1,0 +1,63 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+body.dark {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 15%,
+    rgb(158, 158, 158) 130%
+  );
+  color: #ffffff;
+
+  ::-webkit-scrollbar {
+    width: 15px;
+    background-color: #000;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #5acedd;
+    border-radius: 6px;
+    border: 5px solid #000;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #000;
+  }
+}
+
+body.light {
+  background: linear-gradient(
+    90deg,
+    rgba(230, 254, 255, 1) 33%,
+    rgba(118, 224, 245, 1) 100%
+  );
+  color: #000;
+
+  ::-webkit-scrollbar {
+    width: 15px;
+    background-color: #fff;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 5px solid #27818d;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #fff;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #5acedd;
+  border-radius: 6px;
+  border: 5px solid #fff;
+}
