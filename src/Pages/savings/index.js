@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import style from "./style.module.scss";
-import SideBar from "../../components/Sidebar";
+import SideBar from "../../components/SidebarOld";
 import { Button } from "antd";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import OpenInNewOutlinedIcon from "@mui/icons-material/OpenInNewOutlined";

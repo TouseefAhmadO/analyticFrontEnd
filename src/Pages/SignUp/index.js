@@ -10,6 +10,7 @@ import ThemeToggle from "../../components/Theme/ThemeToggle";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../../components/constant";
+import { CircularProgress } from "@mui/material";
 
 const SignUp = () => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const SignUp = () => {
   };
   const [formValues, setformValues] = useState(initialValues);
   const [error, setError] = useState(initialError);
+  const [loading, setLoading] = useState(false);
 
   const HandleChange = (val, name) => {
     setformValues({
@@ -44,6 +46,8 @@ const SignUp = () => {
     const { username, email, password, confirmPassword } = formValues;
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    setLoading(true);
+
     if (!username) errors.username = "Enter username";
     if (!email) {
       errors.email = "Enter email";
@@ -58,6 +62,7 @@ const SignUp = () => {
 
     if (Object.keys(errors).length) {
       setError({ ...error, ...errors });
+      setLoading(false);
       return;
     }
 
@@ -75,8 +80,9 @@ const SignUp = () => {
     } catch (err) {
       const message =
         err.response?.data?.message || "Something went wrong. Try again.";
-      console.log("hhfkdfjnjdjdsjdsnjsdns", err);
       toast.error(message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -151,7 +157,7 @@ const SignUp = () => {
             <p className={style.errorStyle}>{error.password}</p>
           )}
           <Button className={style.btnStyle} onClick={handleSignUp}>
-            Sign Up
+            {loading ? <CircularProgress size={20} color="#fff" /> : "Sign Up"}
           </Button>
           <p className={style.noAccountStyle}>
             You already have an account?

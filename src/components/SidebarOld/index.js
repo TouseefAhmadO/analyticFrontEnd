@@ -3,7 +3,7 @@ import ThemeToggle from "../Theme/ThemeToggle";
 import { ThemeContext } from "../Theme/ThemeProvider";
 import { useContext } from "react";
 
-const SideBar = () => {
+const SideBarOld = () => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -32,4 +32,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default SideBarOld;

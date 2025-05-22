@@ -1,0 +1,15 @@
+.mainContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dark {
+  background-color: #fff;
+  color: #000;
+}
+
+.light {
+  background-color: #1e1c26;
+  color: #fff;
+}

@@ -1,12 +1,33 @@
 .mainContainer {
   display: flex;
-  gap: 10px;
+  gap: 30px;
+  align-items: center;
 
+  p {
+    font-size: 15px;
+    font-weight: 600;
+    margin-left: -34px;
+    cursor: pointer;
+  }
   .btnStyle {
     color: #ffff;
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    padding: 7px;
+    cursor: pointer;
+  }
+
+  .outBtnStyle {
+    color: #888888;
+    background-color: transparent;
+    border-radius: 50%;
+    height: 35px;
+    width: 35px;
     display: flex;
     justify-content: center;
     align-items: center;

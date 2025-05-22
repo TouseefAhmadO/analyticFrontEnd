@@ -1,0 +1,14 @@
+.mainContainer {
+  min-height: calc(100vh - 64px);
+  padding: 30px;
+}
+
+.dark {
+  background-color: #fff;
+  color: #000;
+}
+
+.light {
+  background-color: #1e1c26;
+  color: #fff;
+}

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 import style from "./style.module.scss";
 import { Button, Input } from "antd";
 import EmailIcon from "@mui/icons-material/Email";
@@ -10,6 +10,7 @@ import axios from "axios";
 import { AuthContext } from "../../components/Auth/authContext";
 import { toast } from "react-toastify";
 import { BASE_URL } from "../../components/constant";
+import { CircularProgress } from "@mui/material";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Login = () => {
   };
   const [formValues, setformValues] = useState(initialValues);
   const [error, setError] = useState(initialError);
-
+  const [loading, setLoading] = useState(false);
 
   const HandleChange = (val, name) => {
     setformValues({
@@ -43,6 +44,8 @@ const Login = () => {
     const { email, password } = formValues;
     const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    setLoading(true);
+
     if (!email) {
       errors.email = "Enter email";
     } else if (!isValidEmail.test(email)) {
@@ -54,17 +57,15 @@ const Login = () => {
 
     if (Object.keys(errors).length) {
       setError({ ...error, ...errors });
+      setLoading(false);
       return;
     }
 
     try {
-      const response = await axios.post(
-        `${BASE_URL}/auth/login`,
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post(`${BASE_URL}/auth/login`, {
+        email,
+        password,
+      });
 
       const { token } = response.data;
       await login(token);
@@ -74,6 +75,8 @@ const Login = () => {
       const message =
         err.response?.data?.message || "Login failed. Check your credentials.";
       toast.error(message);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -120,7 +123,7 @@ const Login = () => {
             <p className={style.errorStyle}>{error.password}</p>
           )}
           <Button className={style.btnStyle} onClick={handleLogin}>
-            Login
+            {loading ? <CircularProgress size={20} color="#fff" /> : "Login"}
           </Button>
           <p className={style.noAccountStyle}>
             Don't have an account?<span onClick={HandleSignUp}> Sign Up</span>
