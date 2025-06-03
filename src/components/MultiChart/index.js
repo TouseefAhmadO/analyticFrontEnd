@@ -1,18 +1,14 @@
 import style from "./style.module.scss";
-import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
-import OpenInNewOutlinedIcon from "@mui/icons-material/OpenInNewOutlined";
 import { ThemeContext } from "../Theme/ThemeProvider";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Chart from "react-apexcharts";
-import { HBChart, HDChart, HSBChart, SDDChart, SDSBChart } from "../Charts";
+import { HDChart, HSBChart, SDDChart, SDSBChart } from "../Charts";
 import { Select } from "antd";
 
-const MultiChart = ({ selectChart, setSelectChart }) => {
+const MultiChart = ({ title, selectChart, setSelectChart }) => {
   const { theme } = useContext(ThemeContext);
-  // const [selectChart, setSelectChart] = useState("donut");
 
   const handleChange = (value) => {
-    console.log(`selected ${value}`);
     setSelectChart(value);
   };
   const isDonut = selectChart === "donut";
@@ -25,56 +21,56 @@ const MultiChart = ({ selectChart, setSelectChart }) => {
         theme === "light" ? style.light : style.dark
       }`}
     >
-      <div className={style.contentHeadContainer}>
-        <h1>TOP 10 SUPPLIER SPEND</h1>
-        {/* <FilterAltOutlinedIcon className={style.iconStyle} />
-        <OpenInNewOutlinedIcon className={style.iconStyle} /> */}
-        <Select
-          onChange={handleChange}
-          value={selectChart}
-          className={style.selectStyle}
-          options={[
-            { value: "pie", label: "Pie" },
-            { value: "donut", label: "Donut" },
-            { value: "column", label: "Column" },
-            { value: "bar", label: "Bar" },
-          ]}
-        />
-      </div>
-      <div className={style.chartStyle}>
-        {isDonut && (
-          <Chart
-            options={HDChart.options}
-            series={HDChart.series}
-            type="donut"
-            height="500"
+      <div className={style.container}>
+        <div className={style.contentHeadContainer}>
+          <h1>{title}</h1>
+          <Select
+            onChange={handleChange}
+            value={selectChart}
+            className={style.selectStyle}
+            options={[
+              { value: "pie", label: "Pie" },
+              { value: "donut", label: "Donut" },
+              { value: "column", label: "Column" },
+              { value: "bar", label: "Bar" },
+            ]}
           />
-        )}
-        {isPie && (
-          <Chart
-            options={SDDChart.options}
-            series={SDDChart.series}
-            type="donut"
-            height="500"
-          />
-        )}
-        {isColumn && (
-          <Chart
-            options={SDSBChart.options}
-            series={SDSBChart.series}
-            type="bar"
-            width="500"
-          />
-        )}
+        </div>
+        <div className={style.chartStyle}>
+          {isDonut && (
+            <Chart
+              options={HDChart.options}
+              series={HDChart.series}
+              type="donut"
+              width="450"
+            />
+          )}
+          {isPie && (
+            <Chart
+              options={SDDChart.options}
+              series={SDDChart.series}
+              type="donut"
+              width="450"
+            />
+          )}
+          {isColumn && (
+            <Chart
+              options={SDSBChart.options}
+              series={SDSBChart.series}
+              type="bar"
+              width="500"
+            />
+          )}
 
-        {isBar && (
-          <Chart
-            options={HSBChart.options}
-            series={HSBChart.series}
-            type="bar"
-            width="500"
-          />
-        )}
+          {isBar && (
+            <Chart
+              options={HSBChart.options}
+              series={HSBChart.series}
+              type="bar"
+              width="500"
+            />
+          )}
+        </div>
       </div>
     </div>
   );

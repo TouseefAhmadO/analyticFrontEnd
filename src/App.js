@@ -15,8 +15,6 @@ import Bids from "./Pages/Bids";
 import { AuthContext } from "./components/Auth/authContext";
 import { ThemeContext } from "./components/Theme/ThemeProvider";
 import { ToastContainer } from "react-toastify";
-import AppLayout from "./Layout";
-import HomeOld from "./Pages/HomeOld";
 import Home from "./Pages/Home";
 
 function App() {
@@ -36,14 +34,6 @@ function App() {
             path="/sign-up"
             element={isAuthenticated ? <Navigate to="/" replace /> : <SignUp />}
           />
-          {/* <Route
-            path="/"
-            element={
-              <AuthRoute isAuthenticated={isAuthenticated}>
-                <HomeOld />
-              </AuthRoute>
-            }
-          /> */}
           <Route
             path="/"
             element={
@@ -52,15 +42,15 @@ function App() {
               </AuthRoute>
             }
           />
-          {/* <Route
+          <Route
             path="/spend-data"
             element={
               <AuthRoute isAuthenticated={isAuthenticated}>
                 <SpendData />
               </AuthRoute>
             }
-          /> */}
-          {/* <Route
+          />
+          <Route
             path="/savings"
             element={
               <AuthRoute isAuthenticated={isAuthenticated}>
@@ -75,7 +65,7 @@ function App() {
                 <Bids />
               </AuthRoute>
             }
-          /> */}
+          />
           <Route
             path="*"
             element={<Navigate to={isAuthenticated ? "/" : "/login"} replace />}

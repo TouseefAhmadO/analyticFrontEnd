@@ -15,15 +15,14 @@ export const HDChart = {
     dataLabels: {
       enabled: true,
       formatter: function (val, opts) {
-        const name = opts.w.globals.labels[opts.seriesIndex];
+        // const name = opts.w.globals.labels[opts.seriesIndex];
         const value = opts.w.globals.series[opts.seriesIndex].toLocaleString();
-        return `${name}\n${value}`;
+        return `${value}`;
       },
       style: {
         fontSize: "10px",
         fontWeight: 600,
         textShadow: "0 0 black",
-        colors: ["#fff"],
       },
       dropShadow: {
         enabled: false,
@@ -33,19 +32,19 @@ export const HDChart = {
       show: false,
     },
     legend: {
-      show: false,
+      show: true,
+      position: "right",
     },
     plotOptions: {
       pie: {
         dataLabels: {
-          offset: 30,
         },
         donut: {
           size: "50%",
         },
       },
     },
-    colors: ["#6ce5e8", "#79e0ff", "#7a91c1", "#7a70ae", "#8c55a1"],
+    colors: ["#02a5ae", "#09b9c5", "#01d6e1", "#087e82", "#6ce5e8"],
   },
 };
 
@@ -65,15 +64,14 @@ export const SDDChart = {
     dataLabels: {
       enabled: true,
       formatter: function (val, opts) {
-        const name = opts.w.globals.labels[opts.seriesIndex];
+        // const name = opts.w.globals.labels[opts.seriesIndex];
         const value = opts.w.globals.series[opts.seriesIndex].toLocaleString();
-        return `${name}\n${value}`;
+        return `${value}`;
       },
       style: {
         fontSize: "10px",
         fontWeight: 600,
         textShadow: "0 0 black",
-        colors: ["#fff"],
       },
       dropShadow: {
         enabled: false,
@@ -83,19 +81,20 @@ export const SDDChart = {
       show: false,
     },
     legend: {
-      show: false,
+      show: true,
+      position: "right",
     },
     plotOptions: {
       pie: {
         dataLabels: {
-          offset: 70,
+          offset: 10,
         },
         donut: {
           size: "0%",
         },
       },
     },
-    colors: ["#6ce5e8", "#7fbbe9", "#7a91c1", "#a43288"],
+    colors: ["#02a5ae", "#09b9c5", "#01d6e1", "#087e82"],
   },
 };
 
@@ -137,7 +136,7 @@ export const HBChart = {
       offsetY: -25,
 
       style: {
-        colors: ["#fff"],
+        colors: ["#747474"],
         fontSize: "12px",
       },
     },
@@ -156,7 +155,7 @@ export const HBChart = {
       labels: {
         rotate: -45,
         style: {
-          colors: "#fff",
+          colors: "#747474",
           fontSize: "12px",
         },
       },
@@ -166,12 +165,12 @@ export const HBChart = {
       title: {
         text: "Spend in Millions",
         style: {
-          color: "#fff",
+          color: "#747474",
         },
       },
       labels: {
         style: {
-          colors: "#fff",
+          colors: "#747474",
         },
       },
     },
@@ -179,7 +178,7 @@ export const HBChart = {
       position: "top",
       horizontalAlign: "center",
       labels: {
-        colors: "#fff",
+        colors: "#747474",
       },
       markers: {
         radius: 12,
@@ -228,11 +227,11 @@ export const HSBChart = {
       enabled: true,
       offsetY: -25,
       style: {
-        colors: ["#fff"],
+        colors: ["#747474"],
         fontSize: "12px",
       },
     },
-    colors: ["#6ce5e8", "#41b8d5"],
+    colors: ["#04b105", "#04a4aa"],
     stroke: {
       show: false,
     },
@@ -241,7 +240,7 @@ export const HSBChart = {
       labels: {
         rotate: -45,
         style: {
-          colors: "#fff",
+          colors: "#747474",
           fontSize: "12px",
         },
       },
@@ -251,12 +250,12 @@ export const HSBChart = {
       title: {
         text: "Spend in Millions",
         style: {
-          color: "#fff",
+          color: "#747474",
         },
       },
       labels: {
         style: {
-          colors: "#fff",
+          colors: "#747474",
         },
       },
     },
@@ -264,7 +263,7 @@ export const HSBChart = {
       position: "top",
       horizontalAlign: "center",
       labels: {
-        colors: "#fff",
+        colors: "#747474",
       },
       markers: {
         radius: 12,
@@ -317,7 +316,7 @@ export const SDSBChart = {
       enabled: true,
       offsetY: -25,
       style: {
-        colors: ["#fff"],
+        colors: ["#747474"],
         fontSize: "12px",
       },
     },
@@ -343,7 +342,7 @@ export const SDSBChart = {
       labels: {
         rotate: -45,
         style: {
-          colors: "#fff",
+          colors: "#747474",
           fontSize: "12px",
         },
       },
@@ -353,12 +352,12 @@ export const SDSBChart = {
       title: {
         text: "Spend in Millions",
         style: {
-          color: "#fff",
+          color: "#747474",
         },
       },
       labels: {
         style: {
-          colors: "#fff",
+          colors: "#747474",
         },
       },
     },
@@ -366,7 +365,7 @@ export const SDSBChart = {
       position: "top",
       horizontalAlign: "center",
       labels: {
-        colors: "#fff",
+        colors: "#747474",
       },
       markers: {
         radius: 12,
@@ -685,7 +684,7 @@ export const LineChart = {
   series: [
     {
       name: "Desktops",
-      data: [0, 3500, 4500, 7000,],
+      data: [0, 3500, 4500, 7000],
     },
   ],
   options: {

@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import style from "./style.module.scss";
-import SideBar from "../../components/SidebarOld";
+import SideBar from "../../components/Sidebar";
 import { Button } from "antd";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import OpenInNewOutlinedIcon from "@mui/icons-material/OpenInNewOutlined";
@@ -68,12 +68,12 @@ const Bids = () => {
         </div>
         <div className={style.contentContainer}>
           <div className={style.contentTableContainer}>
-            <div className={style.contentHeadContainer}>
-              <h1>My Projects</h1>
-              <FilterAltOutlinedIcon className={style.iconStyle} />
-              <OpenInNewOutlinedIcon className={style.iconStyle} />
-            </div>
             <div className={style.contantInnerTable}>
+              <div className={style.contentHeadContainer}>
+                <h1>My Projects</h1>
+                {/* <FilterAltOutlinedIcon className={style.iconStyle} />
+              <OpenInNewOutlinedIcon className={style.iconStyle} /> */}
+              </div>
               <div className={style.tableStyle}>
                 <h3>Project Name</h3>
                 <h3>Status</h3>
@@ -95,12 +95,12 @@ const Bids = () => {
             </div>
           </div>
           <div className={style.contentTableSecondContainer}>
-            <div className={style.contentHeadContainer}>
-              <h1>Preferred Suppliers</h1>
-              <FilterAltOutlinedIcon className={style.iconStyle} />
-              <OpenInNewOutlinedIcon className={style.iconStyle} />
-            </div>
             <div className={style.contantInnerTable}>
+              <div className={style.contentHeadContainer}>
+                <h1>Preferred Suppliers</h1>
+                {/* <FilterAltOutlinedIcon className={style.iconStyle} />
+              <OpenInNewOutlinedIcon className={style.iconStyle} /> */}
+              </div>
               <div className={style.tableStyle}>
                 <h3>Supplier Name</h3>
                 <h3>Categories</h3>

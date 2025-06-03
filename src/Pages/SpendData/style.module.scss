@@ -5,7 +5,6 @@
   .container {
     width: 88%;
     padding: 10px;
-    padding-left: 50px;
 
     .headContainer {
       display: flex;
@@ -19,7 +18,6 @@
       h1 {
         font-size: 30px;
         padding: 10px 30px;
-        color: #fff;
         border-radius: 50px;
         text-align: center;
         margin-top: 0;
@@ -64,36 +62,40 @@
       }
       .contentTableContainer {
         width: 35%;
+        margin-top: 10px;
 
         @media (max-width: 1700px) {
           width: 100%;
         }
 
-        .contantInnerTable {
-          padding: 20px 10px;
-          height: 70vh;
+        .contentInnerTableContainer {
+          padding: 20px 7px;
           border-radius: 30px;
-          overflow-y: scroll;
 
-          .tableStyle {
-            display: flex;
-            text-align: center;
+          .innerTable {
+            height: 70vh;
+            overflow-y: scroll;
+            padding: 20px 7px;
 
-            h1 {
-              width: 60%;
-              padding: 20px 10px;
-              font-size: 19px;
-              margin: 0px;
-            }
-            h2 {
-              width: 40%;
-              padding: 20px 10px;
-              font-size: 19px;
-              margin: 0;
+            .tableStyle {
+              display: flex;
+              text-align: center;
+
+              h1 {
+                width: 60%;
+                padding: 20px 10px;
+                font-size: 19px;
+                margin: 0px;
+              }
+              h2 {
+                width: 40%;
+                padding: 20px 10px;
+                font-size: 19px;
+                margin: 0;
+              }
             }
           }
         }
-
         ::-webkit-scrollbar {
           background-color: transparent;
         }
@@ -106,6 +108,7 @@
       .chartContainer {
         width: 32%;
         padding: 0px 20px;
+        margin-top: 10px;
 
         @media (max-width: 1700px) {
           width: 100%;
@@ -129,7 +132,6 @@
     justify-content: center;
 
     h1 {
-      background-color: #000;
       padding: 5px 20px;
       border-radius: 50px;
       font-size: 28px;
@@ -147,39 +149,38 @@
 
 .dark {
   .container {
-    background: linear-gradient(
-      90deg,
-      rgb(24 24 24) 15%,
-      rgb(158, 158, 158) 130%
-    );
-
     .headContainer {
       h1 {
-        background-color: black;
+        border: 1px solid #888888;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
 
       .headItemsContainer {
         .activeBtnStyle {
-          background-color: #5acedd;
+          background-color: #fff;
+          color: #1e1c26;
         }
         .btnStyle {
-          background-color: #000;
+          background-color: transparent;
+          border: 1px solid #888888;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
           color: #fff;
         }
       }
     }
     .contentContainer {
       .contentTableContainer {
-        .contantInnerTable {
-          background-color: black;
-          color: #fff;
-
-          .tableStyle {
-            h1 {
-              border: 2px solid #5acedd;
-            }
-            h2 {
-              border: 2px solid #5acedd;
+        .contentInnerTableContainer {
+          border: 1px solid #888888;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+          .innerTable {
+            .tableStyle {
+              h1 {
+                border: 2px solid #bdbdbd;
+              }
+              h2 {
+                border: 2px solid #bdbdbd;
+              }
             }
           }
         }
@@ -194,7 +195,8 @@
   }
   .contentHeadContainer {
     h1 {
-      background-color: #000;
+      border: 1px solid #888888;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
     .iconStyle {
@@ -205,41 +207,38 @@
 
 .light {
   .container {
-    background: linear-gradient(
-      90deg,
-      rgba(230, 254, 255, 1) 33%,
-      rgba(118, 224, 245, 1) 100%
-    );
-
     .headContainer {
       h1 {
-        background-color: #27818d;
+        border: 1px solid #424242;
+        box-shadow: rgba(179, 179, 179, 0.2) 0px 2px 8px 0px;
       }
-
       .headItemsContainer {
         .activeBtnStyle {
-          background-color: #27818d;
+          background-color: #1e1c26;
           color: #fff;
         }
         .btnStyle {
-          background-color: #fff;
-          color: #27818d;
+          background-color: transparent;
+          border: 1px solid #424242;
+          box-shadow: rgba(179, 179, 179, 0.2) 0px 2px 8px 0px;
+          color: #1e1c26;
         }
       }
     }
 
     .contentContainer {
       .contentTableContainer {
-        .contantInnerTable {
-          background-color: #27818d;
-          color: #fff;
-
-          .tableStyle {
-            h1 {
-              border: 2px solid #fff;
-            }
-            h2 {
-              border: 2px solid #fff;
+        .contentInnerTableContainer {
+          border: 1px solid #424242;
+          box-shadow: rgba(179, 179, 179, 0.2) 0px 2px 8px 0px;
+          .innerTable {
+            .tableStyle {
+              h1 {
+                border: 2px solid #bdbdbd;
+              }
+              h2 {
+                border: 2px solid #bdbdbd;
+              }
             }
           }
         }
@@ -253,8 +252,8 @@
   }
   .contentHeadContainer {
     h1 {
-      background-color: #27818d;
-      color: #fff;
+      border: 1px solid #424242;
+      box-shadow: rgba(179, 179, 179, 0.2) 0px 2px 8px 0px;
     }
 
     .iconStyle {

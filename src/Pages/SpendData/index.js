@@ -1,23 +1,22 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import style from "./style.module.scss";
-import SideBar from "../../components/SidebarOld";
+import SideBar from "../../components/Sidebar";
 import { Button } from "antd";
 import FilterAltOutlinedIcon from "@mui/icons-material/FilterAltOutlined";
 import OpenInNewOutlinedIcon from "@mui/icons-material/OpenInNewOutlined";
-import Chart from "react-apexcharts";
 import { useNavigate } from "react-router-dom";
-import {
-  HBChart,
-  SDSBChart,
-  HSBChart,
-  SDDChart,
-} from "../../components/Charts";
 import { TableData } from "../../components/DammayData";
 import { ThemeContext } from "../../components/Theme/ThemeProvider";
+import MultiChart from "../../components/MultiChart";
 
 const SpendData = () => {
   const navigate = useNavigate();
   const { theme } = useContext(ThemeContext);
+
+  const [donutChart, setDonutChart] = useState("donut");
+  const [pieChart, setPieChart] = useState("pie");
+  const [columnChart, setcolumnChart] = useState("column");
+  const [barChart, setBarChart] = useState("bar");
 
   const HandleTabs = (name) => {
     navigate(name);
@@ -71,24 +70,26 @@ const SpendData = () => {
         </div>
         <div className={style.contentContainer}>
           <div className={style.contentTableContainer}>
-            <div className={style.contentHeadContainer}>
-              <h1>FULL SUPPLIER LIST</h1>
-              <FilterAltOutlinedIcon className={style.iconStyle} />
-              <OpenInNewOutlinedIcon className={style.iconStyle} />
-            </div>
-            <div className={style.contantInnerTable}>
-              {TableData?.map((item, index) => {
-                return (
-                  <div key={index} className={style.tableStyle}>
-                    <h1>{item?.name}</h1>
-                    <h2>{item?.value}</h2>
-                  </div>
-                );
-              })}
+            <div className={style.contentInnerTableContainer}>
+              <div className={style.contentHeadContainer}>
+                <h1>FULL SUPPLIER LIST</h1>
+                {/* <FilterAltOutlinedIcon className={style.iconStyle} />
+                <OpenInNewOutlinedIcon className={style.iconStyle} /> */}
+              </div>
+              <div className={style.innerTable}>
+                {TableData?.map((item, index) => {
+                  return (
+                    <div key={index} className={style.tableStyle}>
+                      <h1>{item?.name}</h1>
+                      <h2>{item?.value}</h2>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
-          <div className={style.chartContainer} style={{ marginTop: "50px" }}>
-            <div className={style.contentHeadContainer}>
+          <div className={style.chartContainer}>
+            {/* <div className={style.contentHeadContainer}>
               <h1>SPEND BY SUPPLIER</h1>
               <FilterAltOutlinedIcon className={style.iconStyle} />
               <OpenInNewOutlinedIcon className={style.iconStyle} />
@@ -100,8 +101,19 @@ const SpendData = () => {
                 type="donut"
                 heigh="300"
               />
-            </div>
-            <div className={style.contentHeadContainer}>
+            </div> */}
+            <MultiChart
+              title={"SPEND BY SUPPLIER"}
+              selectChart={pieChart}
+              setSelectChart={setPieChart}
+            />
+
+            <MultiChart
+              title={"SEASONALITY SPEND"}
+              selectChart={columnChart}
+              setSelectChart={setcolumnChart}
+            />
+            {/* <div className={style.contentHeadContainer}>
               <h1>SEASONALITY SPEND</h1>
               <FilterAltOutlinedIcon className={style.iconStyle} />
               <OpenInNewOutlinedIcon className={style.iconStyle} />
@@ -113,10 +125,10 @@ const SpendData = () => {
                 type="bar"
                 width="500"
               />
-            </div>
+            </div> */}
           </div>
           <div className={style.chartContainer}>
-            <div className={style.contentHeadContainer}>
+            {/* <div className={style.contentHeadContainer}>
               <h1>SPEND BY BRAND</h1>
               <FilterAltOutlinedIcon className={style.iconStyle} />
               <OpenInNewOutlinedIcon className={style.iconStyle} />
@@ -128,8 +140,20 @@ const SpendData = () => {
                 type="bar"
                 width="500"
               />
-            </div>
-            <div className={style.contentHeadContainer}>
+            </div> */}
+
+            <MultiChart
+              title={"SPEND BY BRAND"}
+              selectChart={donutChart}
+              setSelectChart={setDonutChart}
+            />
+
+            <MultiChart
+              title={"SPEND BY CATEGORY"}
+              selectChart={barChart}
+              setSelectChart={setBarChart}
+            />
+            {/* <div className={style.contentHeadContainer}>
               <h1>SPEND BY CATEGORY</h1>
               <FilterAltOutlinedIcon className={style.iconStyle} />
               <OpenInNewOutlinedIcon className={style.iconStyle} />
@@ -141,7 +165,7 @@ const SpendData = () => {
                 type="bar"
                 width="500"
               />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -8,9 +8,9 @@
     font-weight: 600;
     margin-left: -34px;
     cursor: pointer;
+    text-transform: capitalize;
   }
   .btnStyle {
-    color: #ffff;
     border-radius: 50%;
     height: 35px;
     width: 35px;
@@ -39,11 +39,13 @@
 
 .dark {
   .btnStyle {
-    background-color: #5acedd;
+    color: #1e1c26;
+    background-color: #fff;
   }
 }
 .light {
   .btnStyle {
-    background-color: #27818d;
+    color: #ffff;
+    background-color: #1e1c26;
   }
 }

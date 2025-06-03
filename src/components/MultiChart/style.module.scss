@@ -1,93 +1,199 @@
 .mainContainer {
-  .contentHeadContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
+  .container {
+    border-radius: 50px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    .contentHeadContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
 
-    h1 {
-      padding: 5px 20px;
-      border-radius: 50px;
-      font-size: 28px;
-      margin: 0 0 6px 0;
-    }
-
-    :global .ant-select {
-      height: auto;
-      margin: 0 0 6px 0;
-      width: 120px;
-      .ant-select-selector {
-        border: none;
-        color: #fff;
-        border-radius: 10px;
+      h1 {
         padding: 5px 20px;
-        .ant-select-selection-wrap {
-          .ant-select-selection-item {
-            color: #fff;
-            font-weight: 600;
+        border-radius: 50px;
+        font-size: 28px;
+        margin: 0 0 6px 0;
+      }
+
+      :global .ant-select {
+        height: auto;
+        margin: 0 0 6px 0;
+        width: 120px;
+        .ant-select-selector {
+          border: none;
+          background-color: transparent;
+          border-radius: 10px;
+          padding: 5px 20px;
+          .ant-select-selection-wrap {
+            .ant-select-selection-item {
+              font-weight: 600;
+            }
           }
         }
       }
-      .ant-select-arrow {
-        color: #fff;
+
+      .iconStyle {
+        color: #000;
+        height: 48px;
+        width: 48px;
+        cursor: pointer;
       }
     }
-
-    .iconStyle {
-      color: #000;
-      height: 48px;
-      width: 48px;
-      cursor: pointer;
+    .chartStyle {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-  }
-  .chartStyle {
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    margin-bottom: 20px;
   }
 }
 
 .dark {
-  .contentHeadContainer {
-    h1 {
-      background-color: #000;
-    }
+  .container {
+    border: 1px solid #424242;
+    box-shadow: rgba(179, 179, 179, 0.2) 0px 2px 8px 0px;
 
-    :global .ant-select {
-      .ant-select-selector {
-        background-color: #000;
+    .contentHeadContainer {
+      h1 {
+        color: #fff;
+        border: 1px solid #424242;
+        box-shadow: rgba(179, 179, 179, 0.2) 0px 2px 8px 0px;
+      }
+
+      :global .ant-select {
+        .ant-select-selector {
+          color: #fff;
+          border-color: #424242 !important;
+          border-width: 1px;
+          border-style: solid;
+          box-shadow: rgba(179, 179, 179, 0.2) 0px 2px 8px 0px;
+
+          &:hover {
+            border-color: #424242;
+            box-shadow: none;
+          }
+
+          .ant-select-selection-wrap {
+            .ant-select-selection-item {
+              color: #fff;
+            }
+          }
+        }
+
+        .ant-select-arrow {
+          color: #fff;
+        }
+      }
+
+      .iconStyle {
+        color: #27818d;
       }
     }
-    .iconStyle {
-      color: #000;
+
+    .chartStyle {
+      :global .apexcharts-canvas {
+        .apexcharts-xaxis {
+          .apexcharts-xaxis-label {
+            fill: #fff !important;
+          }
+        }
+        .apexcharts-yaxis {
+          .apexcharts-yaxis-label {
+            fill: #fff !important;
+          }
+          .apexcharts-yaxis-title-text {
+            fill: #fff !important;
+          }
+        }
+        .apexcharts-datalabels {
+          .apexcharts-datalabel {
+            fill: #fff !important;
+          }
+          .apexcharts-pie-label {
+            fill: #fff !important;
+          }
+        }
+        .apexcharts-legend {
+          .apexcharts-legend-text {
+            color: #fff !important;
+            padding-left: 17px !important;
+          }
+        }
+      }
     }
-  }
-  .chartStyle {
-    background-color: #000;
   }
 }
 
 .light {
-  .contentHeadContainer {
-    h1 {
-      background-color: #27818d;
-      color: #fff;
-    }
+  .container {
+    border: 1px solid #888888;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    :global .ant-select {
-      .ant-select-selector {
-        background-color: #27818d;
+    .contentHeadContainer {
+      h1 {
+        border: 1px solid #888888;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+
+      :global .ant-select {
+        .ant-select-selector {
+          color: #000;
+          border-color: #888888 !important;
+          border-width: 1px;
+          border-style: solid;
+          box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+          &:hover {
+            border-color: #888888;
+            box-shadow: none;
+          }
+          .ant-select-selection-wrap {
+            .ant-select-selection-item {
+              color: #000;
+            }
+          }
+        }
+
+        .ant-select-arrow {
+          color: #000;
+        }
+      }
+      .iconStyle {
+        color: #000;
       }
     }
 
-    .iconStyle {
-      color: #27818d;
+    .chartStyle {
+      :global .apexcharts-canvas {
+        .apexcharts-datalabels {
+          .apexcharts-xaxis {
+            .apexcharts-xaxis-label {
+              fill: #1e1c26 !important;
+            }
+          }
+          .apexcharts-yaxis {
+            .apexcharts-yaxis-label {
+              fill: #1e1c26 !important;
+            }
+            .apexcharts-yaxis-title-text {
+              fill: #1e1c26 !important;
+            }
+          }
+          .apexcharts-pie-label {
+            fill: #1e1c26 !important;
+          }
+        }
+        .apexcharts-legend {
+          .apexcharts-datalabel {
+            fill: #1e1c26 !important;
+          }
+          .apexcharts-legend-text {
+            color: #1e1c26 !important;
+            padding-left: 17px !important;
+          }
+        }
+      }
     }
-  }
-  .chartStyle {
-    background-color: #27818d;
   }
 }
