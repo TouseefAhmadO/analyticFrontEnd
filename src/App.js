@@ -16,6 +16,7 @@ import { AuthContext } from "./components/Auth/authContext";
 import { ThemeContext } from "./components/Theme/ThemeProvider";
 import { ToastContainer } from "react-toastify";
 import Home from "./Pages/Home";
+import Contacts from "./Pages/Contacts";
 
 function App() {
   const { isAuthenticated } = useContext(AuthContext);
@@ -63,6 +64,14 @@ function App() {
             element={
               <AuthRoute isAuthenticated={isAuthenticated}>
                 <Bids />
+              </AuthRoute>
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <AuthRoute isAuthenticated={isAuthenticated}>
+                <Contacts />
               </AuthRoute>
             }
           />

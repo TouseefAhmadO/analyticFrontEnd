@@ -62,9 +62,9 @@ const Savings = () => {
             </Button>
             <Button
               className={style.btnStyle}
-              onClick={() => HandleTabs("/bids")}
+              onClick={() => HandleTabs("/contacts")}
             >
-              Project Bids
+              Contacts
             </Button>
           </div>
         </div>
@@ -72,7 +72,7 @@ const Savings = () => {
           <div className={style.contentTableContainer}>
             <div className={style.contentInnerTableContainer}>
               <div className={style.contentHeadContainer}>
-                <h1>SAVINGS BY SUPPLIER</h1>
+                <h1>SAVINGS PER SUPPLIER</h1>
                 {/* <FilterAltOutlinedIcon className={style.iconStyle} />
               <OpenInNewOutlinedIcon className={style.iconStyle} /> */}
               </div>
@@ -86,6 +86,11 @@ const Savings = () => {
                   );
                 })}
               </div>
+            </div>
+            <div className={style.totalContainer}>
+              <h1>
+                Total Spend<br /> $100.00%
+              </h1>
             </div>
           </div>
           <div className={style.chartContainer}>
@@ -103,7 +108,7 @@ const Savings = () => {
               /> */}
 
               <MultiChart
-                title={"SAVINGS OVERVIEW"}
+                title={"SAVINGS BY SUPPLIER"}
                 selectChart={donutChart}
                 setSelectChart={setDonutChart}
               />
@@ -125,7 +130,7 @@ const Savings = () => {
                 </div> */}
 
                 <MultiChart
-                  title={"SAVINGS BY SUPPLIER"}
+                  title={"SEASONALITY SAVING"}
                   selectChart={pieChart}
                   setSelectChart={setPieChart}
                 />

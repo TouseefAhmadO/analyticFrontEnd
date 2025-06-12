@@ -15,8 +15,14 @@ export const HDChart = {
     dataLabels: {
       enabled: true,
       formatter: function (val, opts) {
-        // const name = opts.w.globals.labels[opts.seriesIndex];
-        const value = opts.w.globals.series[opts.seriesIndex].toLocaleString();
+        const value = opts.w.globals.series[opts.seriesIndex].toLocaleString(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0,
+          }
+        );
         return `${value}`;
       },
       style: {
@@ -31,14 +37,20 @@ export const HDChart = {
     stroke: {
       show: false,
     },
+    tooltip: {
+      y: {
+        formatter: function (value) {
+          return `$${value.toLocaleString("en-US")}`;
+        },
+      },
+    },
     legend: {
       show: true,
       position: "right",
     },
     plotOptions: {
       pie: {
-        dataLabels: {
-        },
+        dataLabels: {},
         donut: {
           size: "50%",
         },
@@ -64,8 +76,14 @@ export const SDDChart = {
     dataLabels: {
       enabled: true,
       formatter: function (val, opts) {
-        // const name = opts.w.globals.labels[opts.seriesIndex];
-        const value = opts.w.globals.series[opts.seriesIndex].toLocaleString();
+        const value = opts.w.globals.series[opts.seriesIndex].toLocaleString(
+          "en-US",
+          {
+            style: "currency",
+            currency: "USD",
+            maximumFractionDigits: 0,
+          }
+        );
         return `${value}`;
       },
       style: {
@@ -79,6 +97,13 @@ export const SDDChart = {
     },
     stroke: {
       show: false,
+    },
+    tooltip: {
+      y: {
+        formatter: function (value) {
+          return `$${value.toLocaleString("en-US")}`;
+        },
+      },
     },
     legend: {
       show: true,
@@ -377,175 +402,6 @@ export const SDSBChart = {
   },
 };
 
-// //   series: [
-// //     {
-// //       name: "2024",
-// //       group: "budget",
-// //       color: "#008FFB",
-// //       data: [18, 10, 8, 1],
-// //     },
-
-// //     {
-// //       name: "2025",
-// //       group: "actual",
-// //       color: "#80c7fd",
-// //       data: [20, 16, 14, 3],
-// //     },
-// //     {
-// //       name: "2024",
-// //       group: "budget",
-// //       color: "red",
-// //       data: [8, 10, 8, 1],
-// //     },
-// //   ],
-// //   options: {
-// //     chart: {
-// //       type: "bar",
-// //       background: "transparent",
-// //       // stacked: true,
-// //       toolbar: {
-// //         show: false,
-// //       },
-// //     },
-// //     grid: {
-// //       show: true,
-// //     },
-// //     plotOptions: {
-// //       bar: {
-// //         horizontal: false,
-// //         columnWidth: "90%",
-// //         borderRadius: 5,
-// //         borderRadiusApplication: "end",
-// //         dataLabels: {
-// //           position: "top",
-// //         },
-// //       },
-// //     },
-// //     dataLabels: {
-// //       enabled: false,
-// //       offsetY: -25,
-
-// //       style: {
-// //         // colors: ["#fff"],
-// //         fontSize: "12px",
-// //       },
-// //     },
-// //     colors: ["#6ce5e8", "#41b8d5"],
-// //     stroke: {
-// //       show: false,
-// //     },
-// //     xaxis: {
-// //       categories: ["FEB", "MAR", "APR", "MAY"],
-// //       labels: {
-// //         rotate: -45,
-// //         style: {
-// //           colors: "#fff",
-// //           fontSize: "12px",
-// //         },
-// //       },
-// //     },
-// //     yaxis: {
-// //       max: 25,
-// //       title: {
-// //         // text: "Spend in Millions",
-// //         style: {
-// //           color: "#fff",
-// //         },
-// //       },
-// //       labels: {
-// //         style: {
-// //           colors: "#fff",
-// //         },
-// //       },
-// //     },
-// //     legend: {
-// //       position: "bottom",
-// //       horizontalAlign: "center",
-// //       labels: {
-// //         colors: "#fff",
-// //       },
-// //       markers: {
-// //         radius: 12,
-// //       },
-// //     },
-// //     tooltip: {
-// //       theme: "dark",
-// //     },
-// //   },
-// // };
-
-// export const StackedChart = {
-//   series: [
-//     {
-//       name: "Category A",
-//       color: "#00B050",
-//       group: "budget",
-//       data: [30, 20, 55, 30],
-//     },
-//     {
-//       name: "Category B",
-//       color: "#00B0F0",
-//       data: [31, 30, 15, 40],
-//     },
-//   ],
-//   options: {
-//     chart: {
-//       type: "bar",
-//       background: "transparent",
-//       stacked: true,
-//       toolbar: {
-//         show: false,
-//       },
-//     },
-//     grid: {
-//       show: true,
-//     },
-//     plotOptions: {
-//       bar: {
-//         horizontal: false,
-//         columnWidth: "65%",
-//         borderRadius: 5,
-//         borderRadiusApplication: "end",
-//       },
-//     },
-//     dataLabels: {
-//       enabled: false,
-//     },
-//     xaxis: {
-//       categories: ["FEB", "MAR", "APR", "MAY"],
-//       labels: {
-//         rotate: 0,
-//         style: {
-//           colors: "#fff",
-//           fontSize: "12px",
-//         },
-//       },
-//     },
-//     yaxis: {
-//       max: 75,
-//       labels: {
-//         style: {
-//           colors: "#fff",
-//         },
-//       },
-//     },
-//     legend: {
-//       position: "bottom",
-//       horizontalAlign: "center",
-//       labels: {
-//         colors: "#fff",
-//       },
-//       markers: {
-//         radius: 12,
-//       },
-//     },
-//     tooltip: {
-//       theme: "dark",
-//     },
-//     colors: ["#00B050", "#00B0F0", "#92D050"],
-//   },
-// };
-
 export const StackedChart = {
   series: [
     {
@@ -756,5 +612,207 @@ export const LineChart = {
         },
       },
     ],
+  },
+};
+
+export const HSHBChart = {
+  series: [
+    {
+      name: "Brand",
+      data: [100, 90, 80, 70, 60, 50, 40, 30],
+    },
+  ],
+  options: {
+    chart: {
+      type: "bar",
+      background: "transparent",
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: false,
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        columnWidth: "90%",
+        borderRadius: 5,
+        // borderRadiusApplication: "end",
+        dataLabels: {
+          position: "top",
+        },
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      formatter: function (val, opts) {
+        return `$${val}M`;
+      },
+      offsetX: 25,
+      style: {
+        colors: ["#747474"],
+        fontSize: "12px",
+      },
+    },
+    colors: ["#04a4aa"],
+    stroke: {
+      show: false,
+    },
+    xaxis: {
+      categories: [
+        "Halo",
+        "Hub",
+        "Motive",
+        "Ben",
+        "Havoc",
+        "AJ Inc",
+        "Lone",
+        "Signature",
+      ],
+      labels: {
+        rotate: -45,
+        style: {
+          colors: "#747474",
+          fontSize: "12px",
+        },
+      },
+    },
+    yaxis: {
+      max: 120,
+      title: {
+        text: "Brand",
+        style: {
+          color: "#747474",
+        },
+      },
+      labels: {
+        style: {
+          colors: "#747474",
+        },
+      },
+    },
+    tooltip: {
+      y: {
+        formatter: function (value) {
+          return `$${value}M`;
+        },
+      },
+    },
+    legend: {
+      position: "top",
+      horizontalAlign: "center",
+      labels: {
+        colors: "#747474",
+      },
+      markers: {
+        radius: 12,
+      },
+    },
+    tooltip: {
+      theme: "dark",
+    },
+  },
+};
+
+export const HSFBChart = {
+  series: [
+    {
+      name: "Brand",
+      data: [40, 50, 60, 70, 80, 90, 100, 110],
+    },
+  ],
+  options: {
+    chart: {
+      type: "bar",
+      background: "transparent",
+      toolbar: {
+        show: false,
+      },
+    },
+    grid: {
+      show: false,
+    },
+    plotOptions: {
+      bar: {
+        horizontal: true,
+        columnWidth: "90%",
+        barHeight: "95%",
+        borderRadius: 5,
+        // borderRadiusApplication: "end",
+        isFunnel: true,
+        dataLabels: {
+          // position: "top",
+        },
+      },
+    },
+    dataLabels: {
+      enabled: true,
+      formatter: function (val, opts) {
+        return `$${val}M`;
+      },
+      // offsetX: 25,
+      style: {
+        colors: ["#747474"],
+        fontSize: "12px",
+      },
+    },
+    colors: ["#04a4aa"],
+    stroke: {
+      show: false,
+    },
+    xaxis: {
+      categories: [
+        "Halo",
+        "Hub",
+        "Motive",
+        "Ben",
+        "Havoc",
+        "AJ Inc",
+        "Lone",
+        "Signature",
+      ],
+      labels: {
+        rotate: -45,
+        style: {
+          colors: "#747474",
+          fontSize: "12px",
+        },
+      },
+    },
+    yaxis: {
+      max: 120,
+      title: {
+        text: "Brand",
+        style: {
+          color: "#747474",
+        },
+      },
+      labels: {
+        style: {
+          colors: "#747474",
+        },
+      },
+    },
+    tooltip: {
+      y: {
+        formatter: function (value) {
+          return `$${value}M`;
+        },
+      },
+    },
+    legend: {
+      position: "top",
+      horizontalAlign: "center",
+      labels: {
+        colors: "#747474",
+      },
+      markers: {
+        radius: 12,
+      },
+    },
+    tooltip: {
+      theme: "dark",
+    },
   },
 };

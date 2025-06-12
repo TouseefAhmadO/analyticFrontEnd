@@ -51,9 +51,9 @@ const Home = () => {
             </Button>
             <Button
               className={style.btnStyle}
-              onClick={() => HandleTabs("/bids")}
+              onClick={() => HandleTabs("/contacts")}
             >
-              Project Bids
+              Contacts
             </Button>
           </div>
         </div>
